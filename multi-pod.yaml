@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: multipod
+  name: multipod
+spec:
+  containers:
+  - image: quay.io/redhattraining/versioned-hello:v1.0
+    name: pod1
+  - image: quay.io/redhattraining/versioned-hello:v1.1
+    name: pod2

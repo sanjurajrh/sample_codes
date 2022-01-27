@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: todonodejs
+    name: todoapi
+  name: todoapi
+spec:
+  containers:
+  - env: 
+    - name: MYSQL_ENV_MYSQL_DATABASE
+      value: items
+    - name: MYSQL_ENV_MYSQL_USER
+      value: user1
+    - name: MYSQL_ENV_MYSQL_PASSWORD
+      value: mypa55
+    image: quay.io/redhattraining/do180-todonodejs-12
+    name: todoapi
+    ports:
+    - containerPort: 30080
+      name: nodejs-http
+    resources:
+      limits:
+        cpu: "0.5"
+
